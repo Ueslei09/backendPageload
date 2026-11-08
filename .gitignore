@@ -1,0 +1,11 @@
+# Dependências
+node_modules/
+
+# Ficheiros de ambiente reais (MUITO IMPORTANTE)
+.env
+.env.local
+.env.production.local
+
+# Pastas de Build
+dist/
+build/
