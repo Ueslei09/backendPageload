@@ -33,6 +33,10 @@ app.use('/api/usuarios', userRoutes);
 app.use('/api/leads', leadRoutes);
 app.use('/api/blog', blogRoutes);
 
+app.get('/api/ping', (req, res) => {
+  res.status(200).json({ status: 'online', message: 'Servidor Mover SaaS a todo o vapor!' });
+});
+
 app.listen(PORT, () => {
   console.log(`Mover SaaS Backend modular rodando na porta ${PORT}`);
 });
