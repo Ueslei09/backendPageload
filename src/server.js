@@ -13,7 +13,15 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(helmet());
-app.use(cors({ origin: ['http://localhost:5173'], methods: ['GET', 'POST', 'PUT', 'DELETE'] }));
+app.use(cors({ 
+  origin: [
+    'http://localhost:5173', 
+    'http://localhost:5000',
+    'https://mover-load-page.vercel.app',
+    /\.vercel\.app$/ // <--- Isto permite automaticamente qualquer link de preview do Vercel
+  ], 
+  methods: ['GET', 'POST', 'PUT', 'DELETE'] 
+}));
 
 // Aumente o limite de payload para aceitar imagens em Base64 vindas do painel admin
 app.use(express.json({ limit: '10mb' }));
